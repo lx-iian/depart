@@ -1,0 +1,63 @@
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/test02?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=GMT%2b8
+    username: root
+    password: zZ19951023
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      # 表结构不一致则更新表
+      ddl-auto: update
+  jackson:
+    #default-property-inclusion: ALWAYS
+    # 设置时区
+    time-zone: GMT+8 #Asia/Shanghai
+    # 2021-01-05 09:44:33格式转换配置
+    # date-format: yyyy-MM-dd HH:mm:ss # java.text.SimpleDateFormat
+    serialization:
+      #格式化输出
+      indent_output: true
+      #忽略无法转换的对象
+      fail_on_empty_beans: true
+    deserialization:
+      #允许对象忽略json中不存在的属性  (未生效）
+      fail_on_unknown_properties: off
+server:
+  port: 8080
+
+  tomcat:
+    max-connections: 0
+    uri-encoding: UTF-8
+    accesslog:
+      encoding: UTF-8
+
+#swagger:
+#  enabled: true
+#  application-name: ${spring.application.name}
+#  application-version: 1.0
+#  application-description: springfox swagger 3.0整合Demo
+#  try-host: http://localhost:${server.port}
+
+member-code:
+  prefix: "JQRJ"
+
+age-between:
+  # 小于等于
+  lte: 65
+  # 大于等于
+  gte: 18
+
+initialize-department:
+  id: 1L
+  name: "久其软件"
+  parent-id: 1L
+  level: 1
+  sort: 1
+  enable: 1
+  comment: "部门根节点"

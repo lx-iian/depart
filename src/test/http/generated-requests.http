@@ -1,0 +1,211 @@
+### 部门
+
+### 展现根部门信息
+POST http://localhost:8080/v1/department/list/root
+
+
+### 展现跟部门下子部门（不分页）
+POST http://localhost:8080/v1/department/list/root/children
+
+
+### de 1 新建部门
+PUT http://localhost:8080/v1/department/save/department
+Content-Type: application/json
+
+{
+  "departmentName": "新部门",
+  "departmentCode": "1234321",
+  "parentId": 1,
+  "level": 2,
+  "sort": 1,
+  "canModify": 0,
+  "comment": null,
+  "enable": false
+}
+
+### de 2 修改部门
+PUT http://localhost:8080/v1/department/save/department
+Content-Type: application/json
+
+{
+  "id": 8784608430471836107,
+  "departmentName": "azxzx",
+  "departmentCode": "zxcczx",
+  "parentId": 121,
+  "level": 1,
+  "sort": 1,
+  "canModify": true,
+  "comment": null,
+  "enable": true,
+  "modify": true
+}
+
+### de 3 查询部门信息
+POST http://localhost:8080/v1/department/id
+Content-Type: application/json
+
+{
+  "id": 8784608430471836107
+}
+
+### de 4 根据Code或名称搜索部门
+POST http://localhost:8080/v1/department/search
+Content-Type: application/json
+
+{
+  "search": "JQRJ"
+}
+
+### 部门移动一位
+PATCH http://localhost:8080/v1/department/modify/one_sort
+Content-Type: application/json
+
+{
+  "id": 103,
+  "moveUp": true
+}
+
+### 更改排序
+PATCH http://localhost:8080/v1/department/modify/sort
+Content-Type: application/json
+
+{
+  "id": 103,
+  "moveUp": true,
+  "smallTag": 3,
+  "bigTag": 4
+}
+
+### 分页查询子部门
+POST http://localhost:8080/v1/department/children
+Content-Type: application/json
+
+{
+  "parentId": 1,
+  "pageNumber": 2,
+  "pageSize": 2
+}
+
+### 启、停用部门
+PATCH http://localhost:8080/v1/department/modify/enable
+Content-Type: application/json
+
+{
+  "id": 105,
+  "enable": false
+}
+
+### 变更上级部门
+PATCH http://localhost:8080/v1/department/modify/id
+Content-Type: application/json
+
+{
+  "id": 105,
+  "parentById": 3
+}
+
+### 删除部门
+DELETE http://localhost:8080/v1/department/id
+Content-Type: application/json
+
+{
+  "id": 105
+}
+
+
+###
+# ----------------------------------------------------------
+## 员工API
+
+### 查看员工信息
+POST http://localhost:8080/v1/member/id
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+### 新建员工信息
+PATCH http://localhost:8080/v1/member/save
+Content-Type: application/json
+
+{
+  "id": 2,
+  "memberCode": "1",
+  "memberName": "2",
+  "gender": null,
+  "age": 22,
+  "entryTime": "2021-01-01T09:44:33.000+08:00",
+  "phone": null,
+  "departmentId": null,
+  "comment": null,
+  "createTime": "2021-01-01T09:44:33.000+08:00",
+  "modifyTime": null,
+  "enable": true
+}
+
+### 修改员工信息
+PATCH http://localhost:8080/v1/member/save
+Content-Type: application/json
+
+{
+  "id": 1,
+  "memberCode": "JQRJ2021012",
+  "memberName": "2",
+  "gender": null,
+  "age": 18,
+  "entryTime": "2021-01-04T09:44:33.000+08:00",
+  "phone": 15086046190,
+  "departmentId": null,
+  "comment": null,
+  "createTime": "2021-01-01T09:44:33.000+08:00",
+  "modifyTime": null,
+  "enable": true,
+  "modify": true
+}
+
+### 根据部门ID分页查询员工
+POST http://localhost:8080/v1/member/department_id
+Content-Type: application/json
+
+{
+  "departmentId": 1,
+  "pageNumber": 2,
+  "pageSize": 2,
+  "sort": 1
+}
+
+
+### 根据员工ID修改相邻两个排序
+PATCH http://localhost:8080/v1/member/move/id
+Content-Type: application/json
+
+{
+  "id": 2,
+  "tagSort": 3
+}
+
+### 根据员工ID和移动个数修改排序，1->3 个数为2，3->1 个数为-2
+PATCH http://localhost:8080/v1/member/modify/sort
+Content-Type: application/json
+
+{
+  "id": 3,
+  "modifyNum": 1
+}
+
+### 根据Code或名称搜索员工
+POST http://localhost:8080/v1/member/search
+Content-Type: application/json
+
+{
+  "search": "IT"
+}
+
+### 根据id删除员工
+DELETE http://localhost:8080/v1/member/id
+Content-Type: application/json
+
+{
+  "id": 3
+}

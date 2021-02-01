@@ -1,0 +1,38 @@
+{
+  "properties": [
+    {
+      "name": "member-code.prefix",
+      "type": "java.lang.String",
+      "description": "员工号前缀。"
+    },
+    {
+      "name": "initialize-department.parent-id",
+      "type": "java.lang.String",
+      "description": "Description for initialize-department.parent-id."
+    },
+    {
+      "name": "initialize-department.name",
+      "type": "java.lang.String",
+      "description": "Description for initialize-department.name."
+    },
+    {
+      "name": "initialize-department.level",
+      "type": "java.lang.String",
+      "description": "Description for initialize-department.level."
+    },
+    {
+      "name": "initialize-department.sort",
+      "type": "java.lang.String",
+      "description": "Description for initialize-department.sort."
+    },
+    {
+      "name": "initialize-department.enable",
+      "type": "java.lang.String",
+      "description": "Description for initialize-department.enable."
+    },
+    {
+      "name": "initialize-department.comment",
+      "type": "java.lang.String",
+      "description": "Description for initialize-department.comment."
+    }
+  ] }

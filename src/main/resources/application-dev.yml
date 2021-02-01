@@ -1,0 +1,18 @@
+debug: true
+
+spring:
+  devtools:
+    remote:
+      restart:
+        enabled: true
+  jpa:
+    show-sql: true
+    open-in-view: true
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true
+      #base-url: http://localhost:${server.port}/123swagger-ui/index.html
+    auto-startup: true
+

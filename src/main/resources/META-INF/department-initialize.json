@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "departmentCode": "JQRJ",
+  "departmentName": "久其软件",
+  "parentId": 0,
+  "level": 1,
+  "sort": 1,
+  "createTime": 1,
+  "modifyTime": null,
+  "canModify": false,
+  "comment": "根部门",
+  "enable": true
+}
