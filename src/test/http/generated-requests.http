@@ -209,3 +209,11 @@ Content-Type: application/json
 {
   "id": 3
 }
+
+### graphql测试
+POST http://127.0.0.1:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "{bookById(id:\"book-1\"){id,name,pageCount,author,{firstName,lastName}}}"
+}

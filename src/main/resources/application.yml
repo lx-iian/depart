@@ -28,15 +28,20 @@ spring:
     deserialization:
       #允许对象忽略json中不存在的属性  (未生效）
       fail_on_unknown_properties: off
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: graphql
+
 server:
-  port: 8080
+  port: 8088
 
   tomcat:
     max-connections: 0
     uri-encoding: UTF-8
     accesslog:
       encoding: UTF-8
-
 #swagger:
 #  enabled: true
 #  application-name: ${spring.application.name}
@@ -55,9 +60,10 @@ age-between:
 
 initialize-department:
   id: 1L
-  name: "久其软件"
+  name: "部门根节点"
   parent-id: 1L
   level: 1
   sort: 1
   enable: 1
   comment: "部门根节点"
+
