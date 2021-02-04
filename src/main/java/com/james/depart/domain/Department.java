@@ -22,6 +22,7 @@ import java.util.Date;
 @Cacheable
 @Proxy(lazy = false)
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel("部门实体")

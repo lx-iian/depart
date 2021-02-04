@@ -21,7 +21,7 @@ public class MyResult<T> implements Serializable{
     }
 
     public static <T> MyResult<T> success(String retMsg, T data) {
-        return new MyResult<>(200, retMsg, data);
+        return new MyResult<>(ResultCode.SUCCESS.getCode(), retMsg, data);
     }
 
     public static <T> MyResult<T> success(T data) {
@@ -41,11 +41,11 @@ public class MyResult<T> implements Serializable{
     }
 
     public static <T> MyResult<T> error(String retMsg, T data) {
-        return new MyResult<T>(-1, retMsg, data);
+        return new MyResult<T>(ResultCode.FAIL.getCode(), retMsg, data);
     }
 
     public static <T> MyResult<T> error(String retMsg ) {
-        return new MyResult<>(-1, retMsg, null);
+        return new MyResult<>(ResultCode.FAIL.getCode(), retMsg, null);
     }
 
     public static <T> MyResult<T> error() {

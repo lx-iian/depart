@@ -35,7 +35,7 @@ spring:
       database: graphql
 
 server:
-  port: 8088
+  port: 8080
 
   tomcat:
     max-connections: 0
@@ -50,7 +50,7 @@ server:
 #  try-host: http://localhost:${server.port}
 
 member-code:
-  prefix: "JQRJ"
+  prefix: "Dpartment"
 
 age-between:
   # 小于等于
