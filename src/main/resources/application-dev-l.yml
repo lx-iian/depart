@@ -1,5 +1,8 @@
 debug: true
 
+server:
+  port: 8080
+
 spring:
   devtools:
     remote:
@@ -8,6 +11,19 @@ spring:
   jpa:
     show-sql: true
     open-in-view: true
+  redis:
+    ssl: false
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 50000 # 超时时间
+    password:
+    lettuce:
+      pool:
+        max-active: 100
+        max-wait: -1
+        min-idle: 0
+        max-idle: 20
 
 springfox:
   documentation:

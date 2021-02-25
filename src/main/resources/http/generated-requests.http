@@ -29,8 +29,8 @@ Content-Type: application/json
 
 {
   "id": 8784608430471836107,
-  "departmentName": "azxzx",
-  "departmentCode": "zxcczx",
+  "departmentName": "3213123123",
+  "departmentCode": "12345612312",
   "parentId": 121,
   "level": 1,
   "sort": 1,
@@ -217,3 +217,27 @@ Content-Type: application/json
 {
   "query": "{bookById(id:\"book-1\"){id,name,pageCount,author,{firstName,lastName}}}"
 }
+
+###
+POST http://localhost:8080/post/verify
+Content-Type: application/json
+
+{
+  "phone": 3,
+  "type": 3
+}
+
+###
+GET http://localhost:8080/token
+Content-Type: application/json
+
+{
+
+}
+
+### Redis set
+GET http://localhost:8080/set/redisTest/gotit
+
+### Redis get
+GET http://localhost:8080/get/redisTest
+
