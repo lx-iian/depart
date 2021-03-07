@@ -50,7 +50,7 @@ server:
 #  try-host: http://localhost:${server.port}
 
 member-code:
-  prefix: "Dpartment"
+  prefix: "Department"
 
 age-between:
   # 小于等于

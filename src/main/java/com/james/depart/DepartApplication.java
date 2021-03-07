@@ -36,7 +36,7 @@ import java.util.regex.Pattern;
 @SpringBootApplication
 @EnableOpenApi
 public class DepartApplication implements ApplicationContextAware {
-    private static final String TAG = "DemoApplication";
+    private static final String TAG = "DepartApplication";
 
     static {
         // APIJSON 配置 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
